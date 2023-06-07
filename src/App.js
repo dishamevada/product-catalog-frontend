@@ -1,23 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
+import NewProductForm from './NewProductForm';
+import SearchProductForm from './SearchProductForm';
+import React, { useEffect } from 'react'
 
-function App() {
+const App = () => {
+  // Changes tab name
+  useEffect(() => {
+    document.title = 'Product Catalog';
+  }, []);
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="product-catalog-app">
+      <h1 className="product-catalog-title">Product Catalog 📦</h1>
+      <NewProductForm />
+      <SearchProductForm />
     </div>
   );
 }
